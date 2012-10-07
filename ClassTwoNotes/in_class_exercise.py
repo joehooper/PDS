@@ -1,14 +1,15 @@
-import users
-import listings
+import user
+import listing
 import shop
 import shop as s
 
 
+file_path = "/Users/hoops/Dropbox/Practical Data Science/data files/ecommerce/"
 user_filename = "users.json"
 listings_filename = "listings.json"
 shops_filename = "shops.json"
 
-shops_file = open(shops_filename, 'r')
+shops_file = open(file_path+shops_filename, 'r')
 all_shops = []
 
 for line in shops_file:
@@ -17,19 +18,19 @@ for line in shops_file:
 
 shops_file.close()
 
-user_file = open(user_filename, 'r')
+user_file = open(file_path+user_filename, 'r')
 all_users = []
 
 for line in user_file:
-    new_user = users.fromJson(line)
+    new_user = user.fromJson(line)
     all_users.append(new_user)
 user_file.close()
 
-listing_file = open(listings_filename, 'r')
+listing_file = open(file_path+listings_filename, 'r')
 all_listings = []
 
 for line in listing_file:
-    new_listing = listings.fromJson(line)
+    new_listing = listing.fromJson(line)
     all_listings.append(new_listing)
 
 listing_file.close()
